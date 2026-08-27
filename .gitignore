@@ -1,0 +1,3 @@
+/.lake/
+build_*.log
+build_check.sh

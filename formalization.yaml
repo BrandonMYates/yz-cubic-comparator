@@ -1,0 +1,213 @@
+version: v0.4
+project:
+  name: No low-degree polynomial family for a cubic Diophantine equation
+  description: 'This project formalizes in Lean 4 the statement that the Diophantine
+    equation y*z*(y+z) = x^3 + x^2 + 3x - 1 admits no polynomial parametrization
+    over the rationals whose x-coordinate has degree between 1 and 4. Writing f
+    = X^3 + X^2 + 3X - 1, the compared theorem is that there is no triple of rational
+    polynomials (g, u, v) with g nonconstant of degree at most 4 satisfying the
+    identity u*v*(u+v) = f composed with g. Exhibiting such a family is one of
+    the two standard ways an equation of this shape is settled affirmatively --
+    the other being a sporadic solution -- and the theorem closes that route at
+    low degree. The statement is over the rationals, which is the stronger reading:
+    an integer family is in particular a rational one, so the theorem also excludes
+    integer families in the same degree range. The statement is unconditional and
+    uses no hypothesis from the literature. Context, stated plainly and without
+    overstatement: this equation is recorded on MathOverflow (question 509449,
+    posed by Bogdan Grechuk) as the smallest cubic equation with open solvability
+    problem under the size ordering H(P) = sum |a_i| 2^{d_i} used in that programme,
+    at H = 35. The compared theorem does NOT decide whether the equation has integer
+    solutions, and makes no claim to. A solution could still exist sporadically,
+    or in a polynomial family whose x-coordinate has degree 5 or more, or the equation
+    could be unsolvable for reasons this theorem does not touch. Degree 5 is not
+    covered and is not claimed: it admits slot-degree shapes the argument for degree
+    at most 4 does not reach, and the bound in the statement is exactly the bound
+    that is proved. The audience is the programme that maintains and closes the
+    frontier list this equation sits on -- Bogdan Grechuk and Ashleigh Ratcliffe,
+    On the shortest open cubic equations (arXiv:2603.29831), and the MathOverflow
+    thread 466803 that tracks the current smallest open equations -- together with
+    the adjacent literature on cubic Diophantine equations of this shape: Janos
+    Kollar and Jennifer Li on the Mordell-Schinzel conjecture for cubic Diophantine
+    equations XYZ = G(X,Y) (arXiv:2412.12080), and Martin Bright and Julian Lyczak
+    on log K3 surfaces (arXiv:1705.04529), whose setting -- a del Pezzo surface
+    minus a smooth anticanonical divisor -- is the geometry of the affine surface
+    defined by this equation. Ruling out low-degree parametric families is directly
+    responsive to how equations on that frontier list are resolved. On novelty:
+    a literature search recorded 2026-07-21 and repeated 2026-08-26 identified no
+    indexed resolution of the equation and no proof-assistant formalization touching
+    it or the frontier list; the search is recorded but not exhaustive, and absence
+    from search is not proof of open status. That search establishes that the equation
+    is open; it does NOT establish that the non-existence of low-degree polynomial
+    families is a new observation, and no such claim is made here. The contribution
+    recorded by this entry is the proof-assistant formalization and its auditable
+    dependency chain.'
+  authors:
+  - Brandon Yates
+  license: Apache-2.0
+  responsible_maintainers:
+  - Brandon Yates
+repository:
+  substantive_formalization:
+    id: BrandonMYates/yzcubic
+    revision: 0c0b444244b4d1d1d551418676375fdc7f70b58e
+classification:
+  arxiv:
+  - math.NT
+  - math.AC
+  msc2020:
+  - 11D25
+  - 12E05
+  - 13P15
+sources:
+- title: 'No polynomial family of degree at most four for yz(y+z) = x^3 + x^2 +
+    3x - 1'
+  authors:
+  - Brandon Yates
+  type: original-proof
+  relationship: other
+  note: The compared theorem is first presented by this formalization. It was worked
+    out in unpublished, uncirculated working notes by the author and his automated
+    research assistants during July 2026; those notes are internal, have never been
+    distributed, and are not offered here as a source, since they establish nothing
+    about novelty, priority, or reception. If any part of that material is published
+    or deposited before this entry is submitted, this entry must be rebuilt in source-based
+    mode with that deposit cited.
+- title: Is y^2 z + z^2 y = x^3 + x^2 + 3x - 1 solvable in integers?
+  id: https://mathoverflow.net/questions/509449
+  type: web discussion
+  relationship: background
+  note: 'Origin of the problem and of the framing used in the description: the question
+    states that the equation has size H = 35 and is currently the smallest cubic
+    equation with open solvability problem. It also records, as the poser''s recollection
+    of two-year-old notes, a search up to |x| <= 450,000,000 with no solution found;
+    that figure is a recollection reported in a MathOverflow question, is not independently
+    confirmable, and nothing in this entry rests on it. Read 2026-08-26.'
+  contributors:
+  - name: Bogdan Grechuk
+    role: problem proposer
+  author_endorsement: not-contacted
+- title: On the shortest open cubic equations
+  authors:
+  - Bogdan Grechuk
+  - Ashleigh Ratcliffe
+  id: https://arxiv.org/abs/2603.29831
+  type: paper
+  relationship: background
+  note: The programme that orders Diophantine equations by size and closes them one
+    at a time, and the source of the size ordering under which the equation formalized
+    here is the smallest open cubic. Identifies the audience for a low-degree exclusion.
+  author_endorsement: not-contacted
+- title: The new shortest open cubic equations
+  id: https://mathoverflow.net/questions/466803
+  type: web discussion
+  relationship: background
+  note: The running frontier list on which this equation appears. Recorded as evidence
+    that the equation is tracked as open by the programme, not as a mathematical
+    source.
+  contributors:
+  - name: Bogdan Grechuk
+    role: list maintainer
+  author_endorsement: not-contacted
+- title: The Mordell-Schinzel conjecture for cubic diophantine equations
+  authors:
+  - Janos Kollar
+  - Jennifer Li
+  id: https://arxiv.org/abs/2412.12080
+  type: paper
+  relationship: background
+  note: The nearest family result, on cubic equations XYZ = G(X,Y). Not applied here;
+    recorded because it is where a reader would look next and because it identifies
+    part of the audience.
+  author_endorsement: not-contacted
+- title: A uniform bound on the Brauer groups of certain log K3 surfaces
+  authors:
+  - Martin Bright
+  - Julian Lyczak
+  id: https://arxiv.org/abs/1705.04529
+  type: paper
+  relationship: background
+  note: 'The affine surface yz(y+z) = x^3 + x^2 + 3x - 1 is a del Pezzo surface minus
+    a smooth anticanonical divisor, which is the setting of this paper. Recorded
+    to identify the audience; no result of theirs is used, and the compared theorem
+    is a statement about polynomial identities, not about the surface.'
+  author_endorsement: not-contacted
+related_formalizations:
+- id: https://github.com/leanprover-community/mathlib4
+  relationship: independent
+  note: Mathlib supplies everything the statement needs -- Polynomial, Polynomial.comp,
+    natDegree -- so the Challenge introduces no definitions. The proof uses Mathlib's
+    fermatLastTheoremThree (Fermat's Last Theorem for exponent three) for the degree-3
+    window, and otherwise only elementary polynomial algebra; no Groebner-basis or
+    ideal-membership computation is replayed or relied upon.
+status:
+  scope: 'PROVED: no triple of rational polynomials (g, u, v) with 1 <= deg g <= 4
+    satisfies u*v*(u+v) = f composed with g, where f = X^3 + X^2 + 3X - 1. NOT PROVED
+    and NOT CLAIMED: any statement about the existence of integer or rational solutions
+    of y*z*(y+z) = x^3 + x^2 + 3x - 1; the case deg g >= 5; and every other result in
+    the author''s working notes on this equation, none of which is advertised here.'
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+automation:
+  methods:
+  - method: agent
+    models:
+    - claude-opus-5
+    - claude-fable-5
+    framework: Claude Code
+    tool_setup: The mathematics of the exclusion argument was worked out by Claude
+      Code agents under the author's direction during July 2026. The Lean statement
+      was written by a Claude Code agent in August 2026. The Lean proof (the pinned
+      YZCubic library) was produced on 2026-08-26 by a lead agent (claude-opus-5)
+      coordinating four worker agents (claude-opus-5) against frozen lemma contracts,
+      with independent re-verification (builds, axiom audits, statement diffs) by a
+      separate agent (claude-fable-5) under the author's direction.
+    cost:
+      wall_time: about one hour of wall-clock for the Lean library, concurrent agents
+      spend_usd: subscription-based
+      hardware: local Apple Silicon machine
+    prompting_notes: 'Two items on record. (1) The planned route for the degree-3
+      window was an ideal-membership certificate for a zero-dimensional system of
+      degree 102 in seven variables; during construction the lead agent observed that
+      the window reduces, by comparing leading coefficients, to A*B*(A+B) = G^3 in
+      nonzero rationals -- Fermat''s Last Theorem for exponent three -- so the
+      certificate was never needed and no computer-algebra elimination enters the
+      proof. (2) That degree-102 system had earlier been recomputed independently on
+      2026-08-26 in a second computer-algebra system, confirming the original
+      exploratory claim; it is recorded for provenance only and the compared theorem
+      does not depend on it.'
+  spend_usd: subscription-based
+  notes: The mathematics is the author's, developed with automated assistance. The
+    Lean formalization is produced by automation under the author's direction and
+    verified mechanically.
+fidelity:
+  divergences: 'The compared theorem quantifies over polynomials with rational coefficients.
+    The underlying question is about integer solutions; the polynomial-family statement
+    over the rationals is strictly stronger than the same statement over the integers,
+    and no integrality hypothesis is imposed. The degree bound in the formal statement
+    is exactly the bound proved: degree 5 is excluded from the statement rather than
+    silently assumed away. No other known divergence.'
+review:
+  status: internal-review
+  notes: 'Reviewed internally, mechanically: the pinned library was rebuilt from a clean
+    checkout against Mathlib v4.32.0; every public theorem was checked with #print
+    axioms to depend on exactly propext, Classical.choice and Quot.sound; a
+    comment-stripped scan found no sorry, native_decide or axiom declarations; the
+    Challenge statement was diffed against the library theorem and the definitional
+    bridge (X^3 + X^2 + 3X - 1 = YZCubic.fq, by rfl) was compiled in a separate file
+    against the built artifacts. No human expert has reviewed the mathematics.'
+alignment:
+  namespace: SmallestOpenCubic
+  statements:
+  - source: The author's working notes, the assertion that the equation admits no
+      polynomial parametrization over the rationals with deg x(t) <= 4
+    lean: SmallestOpenCubic.no_polynomial_family_deg_le_four
+    module: Challenge
+    status: proved
+    note: 'The Lean statement renders "polynomial parametrization (x, y, z) = (g(t),
+      u(t), v(t))" as the polynomial identity u*v*(u+v) = f.comp g in Polynomial
+      Q, with g nonconstant. Constant g is excluded by hypothesis: it corresponds
+      to a single rational point rather than a family, and carries no information
+      about solvability.'
+acknowledgements: Mathlib and its contributors; the Lean FRO for Lean, Comparator,
+  lean4export and Verso; the Mathlib Initiative for the formalization.yaml standard.

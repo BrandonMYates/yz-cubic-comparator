@@ -177,9 +177,21 @@ automation:
       exploratory claim; it is recorded for provenance only and the compared theorem
       does not depend on it.'
   spend_usd: subscription-based
-  notes: The mathematics is the author's, developed with automated assistance. The
-    Lean formalization is produced by automation under the author's direction and
-    verified mechanically.
+  notes: 'Roles, stated separately. Direction: the author selected the problem (the
+    smallest open cubic on the MathOverflow list), set the target statement and its
+    scope, directed the work at every stage, and takes responsibility for the
+    submission. Mathematical argument: developed by AI agents (Claude Code,
+    claude-opus-5) under that direction, not by the author -- the structural lemmas
+    (degree divisibility, slot-degree windows, the square-completion exclusion) were
+    identified in a July 2026 agent-run computational search, and the decisive
+    reduction of the degree-3 window to Fermat''s Last Theorem for exponent three was
+    found by the lead agent during formalization; the author did not devise the proof
+    steps. Formalization: the same agents, against frozen lemma contracts.
+    Verification: mechanical (Lean, the axiom audit, Comparator) plus an independent
+    re-verification pass by a separate agent (claude-fable-5): clean rebuild, per-theorem
+    axiom audit, statement diff, rfl bridge. Communication: the Challenge
+    documentation, this metadata and the library README were drafted by agents and
+    reviewed by the author before submission.'
 fidelity:
   divergences: 'The compared theorem quantifies over polynomials with rational coefficients.
     The underlying question is about integer solutions; the polynomial-family statement

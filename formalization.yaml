@@ -188,7 +188,9 @@ fidelity:
     is exactly the bound proved: degree 5 is excluded from the statement rather than
     silently assumed away. No other known divergence.'
 review:
-  status: internal-review
+  status: agent-reviewed
+  reviewers:
+  - Claude Code agents (independent clean rebuild, axiom audit, statement diff, rfl bridge)
   notes: 'Reviewed internally, mechanically: the pinned library was rebuilt from a clean
     checkout against Mathlib v4.32.0; every public theorem was checked with #print
     axioms to depend on exactly propext, Classical.choice and Quot.sound; a

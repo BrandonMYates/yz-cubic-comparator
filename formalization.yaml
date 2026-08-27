@@ -57,7 +57,8 @@ classification:
   msc2020:
   - '11D25'
   - '12E05'
-  - '13P15'sources:
+  - '13P15'
+sources:
 - title: 'No polynomial family of degree at most four for yz(y+z) = x^3 + x^2 +
     3x - 1'
   authors:
